@@ -2,9 +2,9 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
 # --
-# $origin: otobo - 668121ab28c3da98d01f71b0ec03c0d8c98e9885 - Kernel/System/MailAccount/POP3.pm
+# $origin: otobo - 6b9c57ec3bc64e4802719c82c425bd4dc8c3fefd - Kernel/System/MailAccount/POP3.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -21,7 +21,12 @@ package Kernel::System::MailAccount::POP3;
 use strict;
 use warnings;
 
+# core modules
+
+# CPAN modules
 use Net::POP3;
+
+# OTOBO modules
 
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -57,6 +62,8 @@ sub Connect {
         }
     }
 
+    my $Type = 'POP3';
+
     # connect to host
     my $PopObject = Net::POP3->new(
         $Param{Host},
@@ -67,7 +74,7 @@ sub Connect {
     if ( !$PopObject ) {
         return (
             Successful => 0,
-            Message    => "POP3: Can't connect to $Param{Host}"
+            Message    => "$Type: Can't connect to $Param{Host}"
         );
     }
 
@@ -77,7 +84,7 @@ sub Connect {
         $PopObject->quit();
         return (
             Successful => 0,
-            Message    => "POP3: Auth for user $Param{Login}/$Param{Host} failed!"
+            Message    => "$Type: Auth for user $Param{Login}/$Param{Host} failed!"
         );
     }
 
@@ -85,7 +92,7 @@ sub Connect {
         Successful => 1,
         PopObject  => $PopObject,
         NOM        => $NOM,
-        Type       => 'POP3',
+        Type       => $Type,
     );
 }
 
@@ -474,6 +481,12 @@ sub Fetch {
             if ($CMD) {
                 print "\n";
             }
+
+            # Discarding ticket object to enable triggering of
+            # ticket events even in case of mail server timeout
+            $Kernel::OM->ObjectsDiscard(
+                Objects => ['Kernel::System::Ticket'],
+            );
         }
     }
 
