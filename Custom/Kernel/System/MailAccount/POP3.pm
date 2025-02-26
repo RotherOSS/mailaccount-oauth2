@@ -2,9 +2,9 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2021 Rother OSS GmbH, https://otobo.de/
+# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
 # --
-# $origin: otobo - b1c1ab35d59104476ebde772a12c7f3cd36e5211 - Kernel/System/MailAccount/POP3.pm
+# $origin: otobo - 70166a8a6311597bc11ef1991e2b7a4ad69ca8d4 - Kernel/System/MailAccount/POP3.pm
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -21,7 +21,12 @@ package Kernel::System::MailAccount::POP3;
 use strict;
 use warnings;
 
+# core modules
+
+# CPAN modules
 use Net::POP3;
+
+# OTOBO modules
 
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -57,6 +62,8 @@ sub Connect {
         }
     }
 
+    my $Type = 'POP3';
+
     # connect to host
     my $PopObject = Net::POP3->new(
         $Param{Host},
@@ -67,7 +74,7 @@ sub Connect {
     if ( !$PopObject ) {
         return (
             Successful => 0,
-            Message    => "POP3: Can't connect to $Param{Host}"
+            Message    => "$Type: Can't connect to $Param{Host}"
         );
     }
 
@@ -77,7 +84,7 @@ sub Connect {
         $PopObject->quit();
         return (
             Successful => 0,
-            Message    => "POP3: Auth for user $Param{Login}/$Param{Host} failed!"
+            Message    => "$Type: Auth for user $Param{Login}/$Param{Host} failed!"
         );
     }
 
@@ -85,7 +92,7 @@ sub Connect {
         Successful => 1,
         PopObject  => $PopObject,
         NOM        => $NOM,
-        Type       => 'POP3',
+        Type       => $Type,
     );
 }
 
@@ -432,14 +439,14 @@ sub Fetch {
                         my $File = $Self->_ProcessFailed( Email => $Lines );
 
                         my $ErrorMessage = "$AuthType: Can't process mail, mail saved ("
-                            . "$File, report it on http://bugs.otobo.org/)!";
+                            . "$File, report it on https://github.com/RotherOSS/otobo/issues/)!";
 
                         $CommunicationLogObject->ObjectLog(
                             ObjectLogType => 'Message',
                             Priority      => 'Error',
                             Key           => 'Kernel::System::MailAccount::POP3',
                             Value         =>
-                                "Could not process message. Raw mail saved ($File, report it on http://bugs.otobo.org/)!",
+                                "Could not process message. Raw mail saved ($File, report it on https://github.com/RotherOSS/otobo/issues/)!",
                         );
 
                         $MessageStatus = 'Failed';
