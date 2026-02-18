@@ -79,7 +79,7 @@ sub Connect {
     );
 
     # Auth via SASL XOAUTH2.
-    my $SASLXOAUTH2 = encode_base64( 'user=' . $Param{Login} . "\x01auth=Bearer " . $AccessToken . "\x01\x01" );
+    my $SASLXOAUTH2 = encode_base64( 'user=' . $Param{Login} . "\x01auth=Bearer " . $AccessToken . "\x01\x01", '' );
     $IMAPObject->authenticate( 'XOAUTH2', sub { return $SASLXOAUTH2 } );
 
     if ( !$IMAPObject || !$IMAPObject->IsAuthenticated() ) {
