@@ -78,14 +78,22 @@ sub Connect {
         Ignoresizeerrors => 1,
     );
 
+    if ( !$IMAPObject ) {
+        return (
+            Successful => 0,
+            Message    => "IMAPOAuth2: Can't connect to $Param{Host}: $@\n"
+        );
+    }
+
     # Auth via SASL XOAUTH2.
     my $SASLXOAUTH2 = encode_base64( 'user=' . $Param{Login} . "\x01auth=Bearer " . $AccessToken . "\x01\x01", '' );
     $IMAPObject->authenticate( 'XOAUTH2', sub { return $SASLXOAUTH2 } );
 
-    if ( !$IMAPObject || !$IMAPObject->IsAuthenticated() ) {
+    if ( !$IMAPObject->IsAuthenticated() ) {
+        my $Error = $IMAPObject->LastError;
         return (
             Successful => 0,
-            Message    => "IMAPOAuth2: Can't connect to $Param{Host}: $@\n"
+            Message    => "IMAPOAuth2: Can't authenticate with $Param{Host}: $Error\n"
         );
     }
 
