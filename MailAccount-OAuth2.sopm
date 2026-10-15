@@ -4,7 +4,7 @@
     <Version>0.0.0</Version>
     <Framework>10.1.x</Framework>
     <Vendor>Rother OSS GmbH</Vendor>
-    <URL>https://otobo.de/</URL>
+    <URL>https://otobo.io/</URL>
     <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
     <Description Lang="en">Enables receiving emails (IMAP and POP3) via OAuth 2.0 authorization (RFC 6749).</Description>
     <Description Lang="de">Ermöglicht das Abholen von E-Mails (IMAP und POP3) über die OAuth 2.0 Autorisierung (RFC 6749).</Description>
@@ -30,7 +30,7 @@
             <Column Name="account_type" Required="true" Size="25" Type="VARCHAR" />
             <Column Name="account_id" Required="true" Size="150" Type="VARCHAR" />
             <Column Name="token_type" Required="true" Size="20" Type="VARCHAR" />
-            <Column Name="token" Required="true" Type="TEXT" />
+            <Column Name="token" Required="true" Size="10000" Type="VARCHAR" />
         </TableCreate>
     </DatabaseInstall>
     <DatabaseUninstall Type="pre">
