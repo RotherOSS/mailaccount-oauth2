@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
-# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2026 Rother OSS GmbH, https://otobo.io/
 # --
 # $origin: otobo - c14ca55a8b1d3d686e803c1398813b83d22091e5 - Kernel/System/MailAccount.pm
 # --
@@ -78,9 +78,9 @@ adds a new mail account
         Host          => 'pop3.example.com',
         Type          => 'POP3',
         IMAPFolder    => 'Some Folder', # optional, only valid for IMAP-type accounts
-# Rother OSS / eyazi@efflux / MailAccount-OAuth2
+# Rother OSS / eyazi@efflux / MailAccount-OAuth2   ## nofilter(TidyAll::Plugin::OTOBO::Perl::Pod::SpellCheck)
         Profile       => 'Custom1',
-# EO MailAccount-OAuth2
+# EO MailAccount-OAuth2   ## nofilter(TidyAll::Plugin::OTOBO::Perl::Pod::SpellCheck)
         ValidID       => 1,
         Trusted       => 0,
         DispatchingBy => 'Queue', # Queue|From
@@ -292,10 +292,10 @@ returns a hash of mail account data
         ID => 123,
     );
 
-# Rother OSS / eyazi@efflux / MailAccount-OAuth2
+# Rother OSS / eyazi@efflux / MailAccount-OAuth2   ## nofilter(TidyAll::Plugin::OTOBO::Perl::Pod::SpellCheck)
 #(returns: ID, Login, Password, Host, Type, QueueID, Trusted, IMAPFolder, Comment, DispatchingBy, ValidID)
 (returns: ID, Login, Password, Host/Profile, Type, QueueID, Trusted, IMAPFolder, Comment, DispatchingBy, ValidID)
-# EO MailAccount-OAuth2
+# EO MailAccount-OAuth2   ## nofilter(TidyAll::Plugin::OTOBO::Perl::Pod::SpellCheck)
 
 =cut
 

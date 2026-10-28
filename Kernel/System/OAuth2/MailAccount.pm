@@ -2,7 +2,7 @@
 # OTOBO is a web-based ticketing system for service organisations.
 # --
 # Copyright (C) 2019–2021 Efflux GmbH, https://efflux.de/
-# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2026 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -290,7 +290,7 @@ Returns:
     $Profiles = (
         [
             Key   => 'Custom1',
-            Value => 'contoso.com (MicrosoftAzure)'
+            Value => 'contoso.com (MicrosoftAzure)'   ## nofilter(TidyAll::Plugin::OTOBO::Perl::Pod::SpellCheck)
         ],
         [
             Key   => 'Custom2',

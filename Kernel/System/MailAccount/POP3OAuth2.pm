@@ -3,7 +3,7 @@
 # --
 # Copyright (C) 2001-2020 OTRS AG, https://otrs.com/
 # Copyright (C) 2019–2021 Efflux GmbH, https://efflux.de/
-# Copyright (C) 2019-2025 Rother OSS GmbH, https://otobo.io/
+# Copyright (C) 2019-2026 Rother OSS GmbH, https://otobo.io/
 # --
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software
@@ -33,6 +33,7 @@ our @ObjectDependencies = (
 # Use Net::SSLGlue::POP3 on systems with older Net::POP3 modules that cannot handle POP3.
 BEGIN {
     if ( !defined &Net::POP3::starttls ) {
+
         ## nofilter(TidyAll::Plugin::OTOBO::Perl::Require)
         ## nofilter(TidyAll::Plugin::OTOBO::Perl::SyntaxCheck)
         require Net::SSLGlue::POP3;
