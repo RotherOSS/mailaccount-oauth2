@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: OTOBO Installation Guide rel-10.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-15 12:01+0000\n"
-"PO-Revision-Date: 2026-10-28 18:41+0000\n"
+"PO-Revision-Date: 2026-10-30 15:41+0000\n"
 "Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
 "Language-Team: Hungarian <http://translate.otobo.org/projects/otobo-10-1/"
 "addons/manuals/mailaccount-oauth2-documentation/hu/>\n"
@@ -34,6 +34,8 @@ msgid ""
 "Enables receiving emails (IMAP and POP3) via OAuth 2.0 authorization (RFC "
 "6749)."
 msgstr ""
+"Lehetővé teszi az OAuth 2.0 felhatalmazáson (RFC 6749) keresztül történő e-"
+"mailek fogadását (IMAP és POP3)."
 
 #: ../content/index.rst:14
 msgid "System requirements"
@@ -73,35 +75,37 @@ msgstr "Beállítások hivatkozása"
 
 #: ../content/index.rst:38
 msgid "Core::Email::OAuth2"
-msgstr ""
+msgstr "Core::Email::OAuth2"
 
 #: ../content/index.rst:41
 msgid "OAuth2::MailAccount::Providers###Custom1"
-msgstr ""
+msgstr "OAuth2::MailAccount::Providers###Custom1"
 
 #: ../content/index.rst:42 ../content/index.rst:46 ../content/index.rst:54
 msgid "Custom authorization server settings."
-msgstr ""
+msgstr "Egyéni felhatalmazási kiszolgáló beállításai."
 
 #: ../content/index.rst:45
 msgid "OAuth2::MailAccount::Providers###Custom3"
-msgstr ""
+msgstr "OAuth2::MailAccount::Providers###Custom3"
 
 #: ../content/index.rst:49
 msgid "OAuth2::MailAccount::Providers###MicrosoftAzure"
-msgstr ""
+msgstr "OAuth2::MailAccount::Providers###MicrosoftAzure"
 
 #: ../content/index.rst:50
 msgid "Authorization server settings for Microsoft Azure/Microsoft 365."
 msgstr ""
+"Falhatalmazási kiszolgáló beállításai a Microsoft Azure/Microsoft 365 "
+"platformhoz."
 
 #: ../content/index.rst:53
 msgid "OAuth2::MailAccount::Providers###Custom2"
-msgstr ""
+msgstr "OAuth2::MailAccount::Providers###Custom2"
 
 #: ../content/index.rst:57
 msgid "OAuth2::MailAccount::Profiles###Custom1"
-msgstr ""
+msgstr "OAuth2::MailAccount::Profiles###Custom1"
 
 #: ../content/index.rst:58 ../content/index.rst:66 ../content/index.rst:70
 msgid ""
@@ -110,34 +114,39 @@ msgid ""
 "can be \"MicrosoftAzure\", \"GoogleWorkspace\" or a custom provider like "
 "\"Custom1\" (see OAuth2::MailAccount::Providers)."
 msgstr ""
+"Egyéni OAuth 2.0 alkalmazásprofilok beállítása. A „Name” mezőben lévő névnek "
+"egyedinek kell lennie, és a levelezőfiók kezelése képernyőn lesz "
+"megjelenítve. A „ProviderName” értéke „MicrosoftAzure”, „GoogleWorkspace” "
+"vagy egy egyéni szolgáltató lehet, mint például „Egyeni1” (nézze meg az „"
+"OAuth2::MailAccount::Providers” beállítást)."
 
 #: ../content/index.rst:61
 msgid "OAuth2::MailAccount::Providers###GoogleWorkspace"
-msgstr ""
+msgstr "OAuth2::MailAccount::Providers###GoogleWorkspace"
 
 #: ../content/index.rst:62
 msgid "Authorization server settings for Google Workspace."
-msgstr ""
+msgstr "Felhatalmazási kiszolgáló beállításai a Google Workspace platformhoz."
 
 #: ../content/index.rst:65
 msgid "OAuth2::MailAccount::Profiles###Custom3"
-msgstr ""
+msgstr "OAuth2::MailAccount::Profiles###Custom3"
 
 #: ../content/index.rst:69
 msgid "OAuth2::MailAccount::Profiles###Custom2"
-msgstr ""
+msgstr "OAuth2::MailAccount::Profiles###Custom2"
 
 #: ../content/index.rst:73
 msgid "Core::OAuth2"
-msgstr ""
+msgstr "Core::OAuth2"
 
 #: ../content/index.rst:76
 msgid "OAuth2::Settings"
-msgstr ""
+msgstr "OAuth2::Settings"
 
 #: ../content/index.rst:77
 msgid "General OAuth2 settings. TTL in seconds."
-msgstr ""
+msgstr "Általános OAuth2-beállítások. Az élettartam másodpercben van."
 
 #: ../content/index.rst:80
 msgid "About"
