@@ -8,6 +8,7 @@
     <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
     <Description Lang="en">Enables receiving emails (IMAP and POP3) via OAuth 2.0 authorization (RFC 6749).</Description>
     <Description Lang="de">Ermöglicht das Abholen von E-Mails (IMAP und POP3) über die OAuth 2.0 Autorisierung (RFC 6749).</Description>
+    <Description Lang="hu">Lehetővé teszi az OAuth 2.0 felhatalmazáson (RFC 6749) keresztül történő e-mailek fogadását (IMAP és POP3).</Description>
     <Filelist>
         <File Permission="660" Location="Custom/Kernel/Modules/AdminMailAccount.pm" />
         <File Permission="660" Location="Custom/Kernel/Output/HTML/Templates/Standard/AdminMailAccount.tt" />
